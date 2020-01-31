@@ -25,7 +25,7 @@ class Users extends React.Component {
       
         <form style={formCSS}>
           <input style={inputCSS} placeholder="Type in here..." name="username" type="text" value={this.state.username} onChange={this.create}></input> 
-          <input type="button" value= "Add New User!" onClick={() => this.submitForm()}></input>
+          <input style={buttonCSS} type="button" value= "Add New User!" onClick={() => this.submitForm()}></input>
         </form>
 
       </div>
@@ -49,7 +49,16 @@ const formCSS = {
 
 const inputCSS = {
   backgroundColor: 'white',
-  marginRight: '5px'
+  marginRight: '5px',
+  padding: '5px'
+};
+
+const buttonCSS = {
+  borderRadius: '5px',
+  border: 'none',
+  padding: '5px',
+  color: '#00acee',
+  fontWeight: '900'
 };
 
 export default Users;

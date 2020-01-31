@@ -10,9 +10,10 @@ class Posts extends React.Component {
             <span>{posts.username}:</ span>
             <span>{posts.content}</ span>
             <p>{posts.time}</p>
+
           </div>  
         )
-      })
+      });
       
       return (
         <div>{newPost}</div>

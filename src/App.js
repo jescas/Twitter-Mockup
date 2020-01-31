@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import Header from './Header'
 import Input from './Input'
 import Posts from './Posts'
@@ -41,7 +40,7 @@ class App extends React.Component {
     }
   };
 
-  createPost = (username, time, content) => {
+  createPost = (username, content, time) => {
     const newPost = {
       username: username,
       content: content,
@@ -52,12 +51,12 @@ class App extends React.Component {
         post: [newPost, ...this.state.post]
       }
     )
-  }
+  };
 
   createNewUser = (newUser) => {
     this.setState(
       {
-        users: [newUser, ...this.state.users,]
+        users: [newUser, ...this.state.users]
       }
     )
   };
@@ -74,11 +73,11 @@ class App extends React.Component {
 
   render () {
     return (
-      <div style={containerCSS} className = "container">
+      <div style={containerCSS} className="container">
 
         <Header />
 
-        <select className = "userSelect" name = 'name'  value = {this.state.users.username} onChange = {this.handleUser}>
+        <select name='name' value={this.state.users.username} onChange={this.handleUser}>
           <option>Filter Timeline</option>
           {this.state.users.map((user)=> <option >{user.username}</option>)}   
         </select>
@@ -87,7 +86,7 @@ class App extends React.Component {
 
         <Posts selectedUser={this.state.name} users={this.state.users}  post={this.state.post} />
 
-        <Users createNewUser = {this.createNewUser} />
+        <Users createNewUser={this.createNewUser} />
         
       </div>
     )
@@ -101,6 +100,7 @@ const containerCSS = {
   padding: '10px',
   maxWidth: '50%',
   fontSize: 'smaller',
+  fontWeight: '700'
 };
 
 export default App;

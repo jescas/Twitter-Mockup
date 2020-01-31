@@ -26,14 +26,14 @@ class Input extends React.Component {
         
         <h4 style={h4CSS}>What's happening?</h4>
         
-        <select name="username" value={this.state.username} onChange={this.create}>
+        <select style={selectCSS} name="username" value={this.state.username} onChange={this.create}>
           <option>Choose A User</option>
           {this.props.users.map((user)=> <option>{user.username}</option>)}   
         </select>
 
         <div className="inputs">
         <input style={inputCSS} placeholder="Type in here..." name="content" type ="text" value={this.state.content} onChange ={this.create}></input>
-        <input type="button" value="Post!" onClick={() => this.submitForm()}></input>
+        <input style={buttonCSS} type="button" value="Post!" onClick={() => this.submitForm()}></input>
         </div>
         
       </form>
@@ -61,10 +61,24 @@ const h4CSS = {
   marginBottom: '0px'
 };
 
+const selectCSS = {
+  margin: '10px',
+  marginLeft: '0px'
+};
 
 const inputCSS = {
   backgroundColor: 'white',
-  marginRight: '5px'
+  marginRight: '5px',
+  marginBottom: '10px',
+  padding: '5px'
+};
+
+const buttonCSS = {
+  borderRadius: '5px',
+  border: 'none',
+  padding: '5px',
+  color: '#00acee',
+  fontWeight: '900'
 };
 
 export default Input;
